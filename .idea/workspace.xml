@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node.module.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file5.txt" afterDir="false" />
+    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="home work1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/file5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/file5.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,15 +65,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685440872295</updated>
-      <workItem from="1685440873412" duration="1931000" />
+      <workItem from="1685440873412" duration="2642000" />
     </task>
+    <task id="LOCAL-00001" summary="home work1">
+      <created>1685443128723</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685443128723</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="home work1" />
+    <option name="LAST_COMMIT_MESSAGE" value="home work1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
