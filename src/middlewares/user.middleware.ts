@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 
 import { ApiError } from "../interfaces/error.interface";
+import { User } from "../models/User.model";
 import { userService } from "../services/user.service";
 import { UserValidator } from "../validators/user.validator";
-import {User} from "../models/User.model";
 
 class UserMiddleware {
   public isValidCreate(req: Request, res: Response, next: NextFunction) {
@@ -43,13 +43,12 @@ class UserMiddleware {
         throw new Error(error.message);
       }
       req.id = value;
-      console.log(req.id);
       next();
     } catch (e) {
       next(e);
     }
   }
-  public async isDeleteValid(req: any, res: Response, next: NextFunction){
+  public async isDeleteValid(req: any, res: Response, next: NextFunction) {
     try {
       const { id } = req.params;
       const findUser = await User.findById(id);
