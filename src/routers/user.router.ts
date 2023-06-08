@@ -7,17 +7,13 @@ const router = Router();
 
 router.get("/", userController.findAll);
 router.post("/", userMiddleware.isValidCreate, userController.create);
+
 router.patch(
   "/:id",
   userMiddleware.isIdValid,
   userMiddleware.isValidUpdate,
   userController.updateById
 );
-router.delete(
-  "/:id",
-  userMiddleware.isIdValid,
-  userMiddleware.isDeleteValid,
-  userController.deleteById
-);
+router.delete("/:id", userMiddleware.isIdValid, userController.deleteById);
 
 export const userRouter = router;

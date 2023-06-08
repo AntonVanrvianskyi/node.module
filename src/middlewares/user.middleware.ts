@@ -1,8 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 
-import { ApiError } from "../interfaces/error.interface";
-import { User } from "../models/User.model";
-import { userService } from "../services/user.service";
 import { UserValidator } from "../validators/user.validator";
 
 class UserMiddleware {
@@ -20,11 +17,6 @@ class UserMiddleware {
   }
   public async isValidUpdate(req: Request, res: Response, next: NextFunction) {
     try {
-      const { id } = req.params;
-      const findUser = await userService.findById(id);
-      if (!findUser) {
-        throw new ApiError("User not found", 400);
-      }
       const { error, value } = UserValidator.update.validate(req.body);
       if (error) {
         throw new Error(error.message);
@@ -43,18 +35,6 @@ class UserMiddleware {
         throw new Error(error.message);
       }
       req.id = value;
-      next();
-    } catch (e) {
-      next(e);
-    }
-  }
-  public async isDeleteValid(req: any, res: Response, next: NextFunction) {
-    try {
-      const { id } = req.params;
-      const findUser = await User.findById(id);
-      if (!findUser) {
-        throw new ApiError("User not found", 400);
-      }
       next();
     } catch (e) {
       next(e);

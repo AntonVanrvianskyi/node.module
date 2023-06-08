@@ -21,23 +21,19 @@ class UserService {
         }
     }
     async updateById(id, data) {
-        try {
-            return User_model_1.User.findOneAndUpdate({ _id: id }, { ...data }, { returnDocument: "after" });
-        }
-        catch (e) {
-            throw new error_interface_1.ApiError(e.message, e.status);
-        }
+        await this.getOneByIdOrThrow(id);
+        return User_model_1.User.findOneAndUpdate({ _id: id }, { ...data }, { returnDocument: "after" });
     }
     async deleteById(id) {
-        try {
-            return User_model_1.User.deleteOne({ _id: id });
-        }
-        catch (e) {
-            throw new error_interface_1.ApiError(e.message, e.status);
-        }
+        await this.getOneByIdOrThrow(id);
+        return User_model_1.User.deleteOne({ _id: id });
     }
-    async findById(id) {
-        return User_model_1.User.findById({ _id: id });
+    async getOneByIdOrThrow(id) {
+        const user = await User_model_1.User.findById(id);
+        if (!user) {
+            throw new error_interface_1.ApiError("User not found", 400);
+        }
+        return user;
     }
 }
 exports.userService = new UserService();

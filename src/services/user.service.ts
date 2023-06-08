@@ -18,25 +18,23 @@ class UserService {
     }
   }
   async updateById(id: string, data: IUser) {
-    try {
-      return User.findOneAndUpdate(
-        { _id: id },
-        { ...data },
-        { returnDocument: "after" }
-      );
-    } catch (e) {
-      throw new ApiError(e.message, e.status);
-    }
+    await this.getOneByIdOrThrow(id);
+    return User.findOneAndUpdate(
+      { _id: id },
+      { ...data },
+      { returnDocument: "after" }
+    );
   }
   async deleteById(id: string) {
-    try {
-      return User.deleteOne({ _id: id });
-    } catch (e) {
-      throw new ApiError(e.message, e.status);
-    }
+    await this.getOneByIdOrThrow(id);
+    return User.deleteOne({ _id: id });
   }
-  async findById(id: string) {
-    return User.findById({ _id: id });
+  private async getOneByIdOrThrow(id: string): Promise<IUser> {
+    const user = await User.findById(id);
+    if (!user) {
+      throw new ApiError("User not found", 400);
+    }
+    return user;
   }
 }
 

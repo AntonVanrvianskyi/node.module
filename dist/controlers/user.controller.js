@@ -36,7 +36,7 @@ class UserController {
         try {
             const { id } = req.params;
             await user_service_1.userService.deleteById(id);
-            res.status(200).json({
+            res.status(204).json({
                 message: "User deleted",
             });
         }
