@@ -32,8 +32,7 @@ class UserController {
 
   async updateById(req: any, res: Response, next: NextFunction) {
     try {
-      const { id } = req.id;
-      await userService.updateById(id, req.res.locals as IUser);
+      await userService.updateById(req.id, req.res.locals as IUser);
       res.json({
         message: "User updated",
       });

@@ -35,6 +35,9 @@ class UserService {
       throw new ApiError(e.message, e.status);
     }
   }
+  async findById(id: string) {
+    return User.findById({ _id: id });
+  }
 }
 
 export const userService = new UserService();

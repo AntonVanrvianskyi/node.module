@@ -4,45 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="home work1">
+    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="home work5">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/configs/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/constants/regex.constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/controlers/user.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/enums/user.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/interfaces/error.interface.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/interfaces/user.interface.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/models/User.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/routers/user.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/services/user.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/validators/user.validator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/configs/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/regex.constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controlers/user.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/user.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/error.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/user.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/User.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routers/user.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/validators/user.validator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/file5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/controlers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controlers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routers/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/user.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +106,7 @@
       <workItem from="1686139560788" duration="2218000" />
       <workItem from="1686151914073" duration="3660000" />
       <workItem from="1686159877627" duration="614000" />
-      <workItem from="1686209296791" duration="6841000" />
+      <workItem from="1686209296791" duration="9799000" />
     </task>
     <task id="LOCAL-00001" summary="home work1">
       <created>1685443128723</created>
@@ -150,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685443556073</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="home work5">
+      <created>1686216302704</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686216302704</updated>
+    </task>
+    <task id="LOCAL-00004" summary="home work5">
+      <created>1686216528297</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686216528297</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +161,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="home work1" />
-    <option name="LAST_COMMIT_MESSAGE" value="home work1" />
+    <MESSAGE value="home work5" />
+    <option name="LAST_COMMIT_MESSAGE" value="home work5" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

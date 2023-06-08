@@ -36,5 +36,8 @@ class UserService {
             throw new error_interface_1.ApiError(e.message, e.status);
         }
     }
+    async findById(id) {
+        return User_model_1.User.findById({ _id: id });
+    }
 }
 exports.userService = new UserService();

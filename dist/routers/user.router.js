@@ -8,5 +8,5 @@ const router = (0, express_1.Router)();
 router.get("/", user_controller_1.userController.findAll);
 router.post("/", user_middleware_1.userMiddleware.isValidCreate, user_controller_1.userController.create);
 router.patch("/:id", user_middleware_1.userMiddleware.isIdValid, user_middleware_1.userMiddleware.isValidUpdate, user_controller_1.userController.updateById);
-router.delete("/:id", user_controller_1.userController.deleteById);
+router.delete("/:id", user_middleware_1.userMiddleware.isIdValid, user_middleware_1.userMiddleware.isDeleteValid, user_controller_1.userController.deleteById);
 exports.userRouter = router;
