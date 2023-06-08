@@ -13,6 +13,6 @@ router.patch(
   userMiddleware.isValidUpdate,
   userController.updateById
 );
-router.delete("/:id", userController.deleteById);
+router.delete("/:id", userMiddleware.isIdValid, userController.deleteById);
 
 export const userRouter = router;
