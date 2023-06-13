@@ -26,20 +26,20 @@ class CommonMiddleware {
       if (error) {
         throw new Error(error.message);
       }
-      req.res.locals = value;
+      req.body = value;
       next();
     } catch (e) {
       next(e);
     }
   }
-  public isIdValid(req: any, res: Response, next: NextFunction) {
+  public isIdValid(req: Request, res: Response, next: NextFunction) {
     try {
       const { id } = req.params;
       const { error, value } = UserValidator.checkedID.validate(id);
       if (error) {
         throw new Error(error.message);
       }
-      req.id = value;
+      req.res.locals.id = value;
       next();
     } catch (e) {
       next(e);
