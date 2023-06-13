@@ -10,13 +10,7 @@ class UserService {
       throw new ApiError(e.message, e.status);
     }
   }
-  async create(data: IUser) {
-    try {
-      return User.create(data);
-    } catch (e) {
-      throw new ApiError(e.message, e.status);
-    }
-  }
+
   async updateById(id: string, data: IUser) {
     await this.getOneByIdOrThrow(id);
     return User.findOneAndUpdate(
@@ -38,9 +32,6 @@ class UserService {
   }
   public async findOne(email: string): Promise<IUser> {
     const user = await User.findOne({ email });
-    if (!user) {
-      throw new ApiError("Invalid email or password", 400);
-    }
     return user;
   }
 }
