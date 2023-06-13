@@ -1,19 +1,24 @@
 import { Router } from "express";
 
 import { userController } from "../controlers/user.controller";
-import { userMiddleware } from "../middlewares/user.middleware";
+import { commonMiddleware } from "../middlewares/common.middleware";
+import { UserValidator } from "../validators/user.validator";
 
 const router = Router();
 
 router.get("/", userController.findAll);
-router.post("/", userMiddleware.isValidCreate, userController.create);
+router.post(
+  "/",
+  commonMiddleware.isBodyValid(UserValidator.create),
+  userController.create
+);
 
 router.patch(
   "/:id",
-  userMiddleware.isIdValid,
-  userMiddleware.isValidUpdate,
+  commonMiddleware.isIdValid,
+  commonMiddleware.isValidUpdate,
   userController.updateById
 );
-router.delete("/:id", userMiddleware.isIdValid, userController.deleteById);
+router.delete("/:id", commonMiddleware.isIdValid, userController.deleteById);
 
 export const userRouter = router;

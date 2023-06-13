@@ -36,6 +36,13 @@ class UserService {
     }
     return user;
   }
+  public async findOne(email: string): Promise<IUser> {
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new ApiError("Invalid email or password", 400);
+    }
+    return user;
+  }
 }
 
 export const userService = new UserService();

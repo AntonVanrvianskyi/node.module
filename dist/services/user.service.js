@@ -35,5 +35,12 @@ class UserService {
         }
         return user;
     }
+    async findOne(email) {
+        const user = await User_model_1.User.findOne({ email });
+        if (!user) {
+            throw new error_interface_1.ApiError("Invalid email or password", 400);
+        }
+        return user;
+    }
 }
 exports.userService = new UserService();

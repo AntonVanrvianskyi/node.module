@@ -4,17 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="change">
+    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="work">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/controlers/auth.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/interfaces/login.interface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/interfaces/token.interface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/middlewares/common.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/models/token.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/routers/auth.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/auth.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/generete.token.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/services/password.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlers/auth.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/login.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/token.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/middlewares/common.middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/token.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routers/auth.router.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/generete.token.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/password.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/controlers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controlers/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routers/user.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/validators/user.validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/validators/user.validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/user.router.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validators/user.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/user.validator.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +56,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson2" />
+        <entry key="$PROJECT_DIR$" value="lesson3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,6 +133,7 @@
       <workItem from="1686209296791" duration="11210000" />
       <workItem from="1686243969171" duration="804000" />
       <workItem from="1686255016003" duration="2015000" />
+      <workItem from="1686667045132" duration="3277000" />
     </task>
     <task id="LOCAL-00001" summary="home work1">
       <created>1685443128723</created>
@@ -179,7 +204,8 @@
     <MESSAGE value="home work1" />
     <MESSAGE value="home work5" />
     <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="work" />
+    <option name="LAST_COMMIT_MESSAGE" value="work" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
