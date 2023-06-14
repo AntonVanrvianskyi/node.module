@@ -12,18 +12,9 @@ class UserController {
             next(e);
         }
     }
-    async create(req, res, next) {
-        try {
-            const createdUser = await user_service_1.userService.create(req.res.locals);
-            return res.status(201).json(createdUser);
-        }
-        catch (e) {
-            next(e);
-        }
-    }
     async updateById(req, res, next) {
         try {
-            await user_service_1.userService.updateById(req.id, req.res.locals);
+            await user_service_1.userService.updateById(req.res.locals.id, req.body);
             res.json({
                 message: "User updated",
             });

@@ -12,14 +12,6 @@ class UserService {
             throw new error_interface_1.ApiError(e.message, e.status);
         }
     }
-    async create(data) {
-        try {
-            return User_model_1.User.create(data);
-        }
-        catch (e) {
-            throw new error_interface_1.ApiError(e.message, e.status);
-        }
-    }
     async updateById(id, data) {
         await this.getOneByIdOrThrow(id);
         return User_model_1.User.findOneAndUpdate({ _id: id }, { ...data }, { returnDocument: "after" });
@@ -37,9 +29,6 @@ class UserService {
     }
     async findOne(email) {
         const user = await User_model_1.User.findOne({ email });
-        if (!user) {
-            throw new error_interface_1.ApiError("Invalid email or password", 400);
-        }
         return user;
     }
 }

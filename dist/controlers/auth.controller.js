@@ -5,7 +5,7 @@ const auth_service_1 = require("../services/auth.service");
 class AuthController {
     async register(req, res, next) {
         try {
-            await auth_service_1.authService.register(req.res.locals);
+            await auth_service_1.authService.register(req.body);
             return res.status(201).json({
                 message: "user authorized",
             });
@@ -16,7 +16,7 @@ class AuthController {
     }
     async login(req, res, next) {
         try {
-            const tokens = await auth_service_1.authService.login(req.body, req.user);
+            const tokens = await auth_service_1.authService.login(req.body, req.res.locals.user);
             return res.status(200).json({
                 ...tokens,
             });

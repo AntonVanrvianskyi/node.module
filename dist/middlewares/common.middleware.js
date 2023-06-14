@@ -12,7 +12,7 @@ class CommonMiddleware {
                 if (error) {
                     throw new error_interface_1.ApiError(error.message, 400);
                 }
-                req.res.locals = value;
+                req.body = value;
                 next();
             }
             catch (e) {
@@ -26,7 +26,7 @@ class CommonMiddleware {
             if (error) {
                 throw new Error(error.message);
             }
-            req.res.locals = value;
+            req.body = value;
             next();
         }
         catch (e) {
@@ -40,7 +40,7 @@ class CommonMiddleware {
             if (error) {
                 throw new Error(error.message);
             }
-            req.id = value;
+            req.res.locals.id = value;
             next();
         }
         catch (e) {
@@ -51,7 +51,10 @@ class CommonMiddleware {
         try {
             const { email } = req.body;
             const user = await user_service_1.userService.findOne(email);
-            req.user = user;
+            if (!user) {
+                throw new error_interface_1.ApiError("Invalid email or password", 400);
+            }
+            req.res.locals.user = user;
             next();
         }
         catch (e) {
