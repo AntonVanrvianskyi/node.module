@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="refresh hw">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/controlers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controlers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/routers/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routers/auth.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/auth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/generete.token.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/generete.token.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/user.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/user.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/token.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/token.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/auth.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/auth.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/user.router.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/generete.token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/generete.token.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +103,7 @@
       <workItem from="1686255016003" duration="2015000" />
       <workItem from="1686667045132" duration="6091000" />
       <workItem from="1686819984315" duration="6340000" />
-      <workItem from="1686841363008" duration="5218000" />
+      <workItem from="1686841363008" duration="5520000" />
     </task>
     <task id="LOCAL-00001" summary="home work1">
       <created>1685443128723</created>
@@ -187,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686835235767</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refresh hw">
+      <created>1686853473003</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686853473003</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

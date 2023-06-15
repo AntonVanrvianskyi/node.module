@@ -30,7 +30,7 @@ class AuthService {
             const newTokenPair = generete_token_service_1.generateToken.create(payload);
             await Promise.all([
                 await token_model_1.Token.create({ _userId: payload._id, ...newTokenPair }),
-                await token_model_1.Token.deleteOne({ refresh: oldTokenPair }),
+                await token_model_1.Token.deleteOne({ refresh: oldTokenPair.refresh }),
             ]);
             return newTokenPair;
         }
