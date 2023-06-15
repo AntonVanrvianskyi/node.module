@@ -4,6 +4,7 @@ import { authController } from "../controlers/auth.controller";
 import { commonMiddleware } from "../middlewares/common.middleware";
 import { UserValidator } from "../validators/user.validator";
 import { userMiddleware } from "../middlewares/user.middleware";
+import {authMiddleware} from "../middlewares/auth.middleware";
 
 const router = Router();
 
@@ -19,6 +20,6 @@ router.post(
   commonMiddleware.userChecked,
   authController.login
 );
-router.post("/refresh", authController.refresh)
+router.post("/refresh", authMiddleware.checkRefresh, authController.refresh);
 
 export const authRouter = router;

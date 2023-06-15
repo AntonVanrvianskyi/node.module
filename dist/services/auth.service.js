@@ -25,16 +25,14 @@ class AuthService {
         });
         return tokensPair;
     }
-    refresh(refreshToken, id) {
+    async refresh(oldTokenPair, payload) {
         try {
-            const entity = token_model_1.Token.findOne({ refresh: refreshToken });
-            if (!entity) {
-                throw new error_interface_1.ApiError("Refresh not valid", 401);
-            }
-            const newTokenPair = generete_token_service_1.generateToken.create({ _id: id });
-            return {
-                ...newTokenPair,
-            };
+            const newTokenPair = generete_token_service_1.generateToken.create(payload);
+            await Promise.all([
+                await token_model_1.Token.create({ _userId: payload._id, ...newTokenPair }),
+                await token_model_1.Token.deleteOne({ refresh: oldTokenPair }),
+            ]);
+            return newTokenPair;
         }
         catch (e) {
             throw new error_interface_1.ApiError(e.message, e.status);

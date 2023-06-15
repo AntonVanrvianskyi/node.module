@@ -30,7 +30,7 @@ const error_interface_1 = require("../interfaces/error.interface");
 class GenerateTokenService {
     create(payload) {
         const access = jwt.sign(payload, config_1.configs.SECRET_ACCESS, {
-            expiresIn: "15s",
+            expiresIn: "20s",
         });
         const refresh = jwt.sign(payload, config_1.configs.SECRET_REFRESH, {
             expiresIn: "15d",

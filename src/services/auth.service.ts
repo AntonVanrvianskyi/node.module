@@ -1,7 +1,7 @@
 import { ApiError } from "../interfaces/error.interface";
 import { ILogin } from "../interfaces/login.interface";
 import { IToken } from "../interfaces/token.interface";
-import { IUser } from "../interfaces/user.interface";
+import { ITokenPayload, IUser } from "../interfaces/user.interface";
 import { Token } from "../models/token.model";
 import { User } from "../models/User.model";
 import { generateToken } from "./generete.token.service";
@@ -31,16 +31,17 @@ class AuthService {
     return tokensPair;
   }
 
-  public refresh(refreshToken: string, id: string) {
+  public async refresh(
+    oldTokenPair: IToken,
+    payload: ITokenPayload
+  ): Promise<IToken> {
     try {
-      const entity = Token.findOne({ refresh: refreshToken });
-      if (!entity) {
-        throw new ApiError("Refresh not valid", 401);
-      }
-      const newTokenPair = generateToken.create({ _id: id });
-      return {
-        ...newTokenPair,
-      };
+      const newTokenPair = generateToken.create(payload);
+      await Promise.all([
+        await Token.create({ _userId: payload._id, ...newTokenPair }),
+        await Token.deleteOne({ refresh: oldTokenPair }),
+      ])
+      return newTokenPair;
     } catch (e) {
       throw new ApiError(e.message, e.status);
     }

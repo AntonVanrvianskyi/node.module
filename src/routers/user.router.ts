@@ -12,13 +12,13 @@ router.patch(
   "/:id",
   commonMiddleware.isIdValid,
   commonMiddleware.isBodyValid(UserValidator.update),
-  authMiddleware.checkToken,
+  authMiddleware.checkAccessToken,
   userController.updateById
 );
 router.delete(
   "/:id",
   commonMiddleware.isIdValid,
-  authMiddleware.checkToken,
+  authMiddleware.checkAccessToken,
   userController.deleteById
 );
 

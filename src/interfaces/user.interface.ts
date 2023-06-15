@@ -8,3 +8,5 @@ export interface IUser {
   password: string;
   gender?: string;
 }
+
+export type ITokenPayload = Pick<IUser, "_id" | "name">;

@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 
+import { configs } from "../configs/config";
 import { ApiError } from "../interfaces/error.interface";
 import { Token } from "../models/token.model";
 import { generateToken } from "../services/generete.token.service";
-import { configs } from "../configs/config";
 
 class AuthMiddleware {
-  public checkToken(req: Request, res: Response, next: NextFunction) {
+  public checkAccessToken(req: Request, res: Response, next: NextFunction) {
     try {
       const accessToken = req.get("Authorization");
       if (!accessToken) {
@@ -24,6 +24,30 @@ class AuthMiddleware {
       }
       req.res.locals.tokenPayload = tokenPayload;
       next();
+    } catch (e) {
+      next(e);
+    }
+  }
+
+  public async checkRefresh(req: Request, res: Response, next: NextFunction) {
+    try {
+      const refreshToken = req.get("Authorization");
+      if (!refreshToken) {
+        throw new ApiError("No Refresh Token", 401);
+      }
+
+      const payload = generateToken.checkToken(
+        refreshToken,
+        configs.SECRET_REFRESH
+      );
+
+      const entity = await Token.findOne({ refresh: refreshToken });
+      if (!entity) {
+        throw new ApiError("Refresh token not valid", 401);
+      }
+
+      req.res.locals.oldTokenPair = entity;
+      req.res.locals.tokenPayload = { _id: payload._id, name: payload.name };
     } catch (e) {
       next(e);
     }
