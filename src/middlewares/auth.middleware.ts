@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { ApiError } from "../interfaces/error.interface";
 import { Token } from "../models/token.model";
 import { generateToken } from "../services/generete.token.service";
+import { configs } from "../configs/config";
 
 class AuthMiddleware {
   public checkToken(req: Request, res: Response, next: NextFunction) {
@@ -12,7 +13,10 @@ class AuthMiddleware {
         throw new ApiError("Token not found", 401);
       }
 
-      const tokenPayload = generateToken.checkToken(accessToken);
+      const tokenPayload = generateToken.checkToken(
+        accessToken,
+        configs.SECRET_ACCESS
+      );
 
       const entity = Token.findOne({ access: accessToken });
       if (!entity) {

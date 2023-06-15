@@ -4,6 +4,7 @@ exports.authMiddleware = void 0;
 const error_interface_1 = require("../interfaces/error.interface");
 const token_model_1 = require("../models/token.model");
 const generete_token_service_1 = require("../services/generete.token.service");
+const config_1 = require("../configs/config");
 class AuthMiddleware {
     checkToken(req, res, next) {
         try {
@@ -11,7 +12,7 @@ class AuthMiddleware {
             if (!accessToken) {
                 throw new error_interface_1.ApiError("Token not found", 401);
             }
-            const tokenPayload = generete_token_service_1.generateToken.checkToken(accessToken);
+            const tokenPayload = generete_token_service_1.generateToken.checkToken(accessToken, config_1.configs.SECRET_ACCESS);
             const entity = token_model_1.Token.findOne({ access: accessToken });
             if (!entity) {
                 throw new error_interface_1.ApiError("Token not valid", 401);

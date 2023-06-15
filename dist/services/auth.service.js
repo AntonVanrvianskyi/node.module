@@ -25,5 +25,20 @@ class AuthService {
         });
         return tokensPair;
     }
+    refresh(refreshToken, id) {
+        try {
+            const entity = token_model_1.Token.findOne({ refresh: refreshToken });
+            if (!entity) {
+                throw new error_interface_1.ApiError("Refresh not valid", 401);
+            }
+            const newTokenPair = generete_token_service_1.generateToken.create({ _id: id });
+            return {
+                ...newTokenPair,
+            };
+        }
+        catch (e) {
+            throw new error_interface_1.ApiError(e.message, e.status);
+        }
+    }
 }
 exports.authService = new AuthService();

@@ -25,13 +25,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateToken = void 0;
 const jwt = __importStar(require("jsonwebtoken"));
+const config_1 = require("../configs/config");
 const error_interface_1 = require("../interfaces/error.interface");
 class GenerateTokenService {
     create(payload) {
-        const access = jwt.sign(payload, "jwtAccess", {
-            expiresIn: "15m",
+        const access = jwt.sign(payload, config_1.configs.SECRET_ACCESS, {
+            expiresIn: "15s",
         });
-        const refresh = jwt.sign(payload, "jwtRefresh", {
+        const refresh = jwt.sign(payload, config_1.configs.SECRET_REFRESH, {
             expiresIn: "15d",
         });
         return {
@@ -39,9 +40,9 @@ class GenerateTokenService {
             refresh,
         };
     }
-    checkToken(token) {
+    checkToken(token, secretWord) {
         try {
-            return jwt.verify(token, "jwtAccess");
+            return jwt.verify(token, secretWord);
         }
         catch (e) {
             throw new error_interface_1.ApiError(e.message, e.status);

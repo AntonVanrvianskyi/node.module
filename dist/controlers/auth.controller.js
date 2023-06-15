@@ -16,9 +16,21 @@ class AuthController {
     }
     async login(req, res, next) {
         try {
-            const tokens = await auth_service_1.authService.login(req.body, req.res.locals.user);
+            const tokens = await auth_service_1.authService.login(req.body, req.res.locals.tokenPayload);
             return res.status(200).json({
                 ...tokens,
+            });
+        }
+        catch (e) {
+            next(e);
+        }
+    }
+    async refresh(req, res, next) {
+        try {
+            const { refresh } = req.body;
+            const tokenPair = auth_service_1.authService.refresh(refresh, req.res.locals.user);
+            res.status(200).json({
+                ...tokenPair,
             });
         }
         catch (e) {

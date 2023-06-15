@@ -19,7 +19,9 @@ app.use((err: ApiError, req: Request, res: Response, next: NextFunction) => {
     status: err.status,
   });
 });
-app.listen(configs.PORT, () => {
+const PORT = 5000
+
+app.listen(PORT, () => {
   mongoose.connect(configs.DB_URL);
-  console.log(`Server started to ${configs.PORT}`);
+  console.log(`Server started to ${PORT}`);
 });

@@ -20,9 +20,23 @@ class AuthController {
     next: NextFunction
   ): Promise<Response<IToken>> {
     try {
-      const tokens = await authService.login(req.body, req.res.locals.user);
+      const tokens = await authService.login(
+        req.body,
+        req.res.locals.tokenPayload
+      );
       return res.status(200).json({
         ...tokens,
+      });
+    } catch (e) {
+      next(e);
+    }
+  }
+  public async refresh(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { refresh } = req.body;
+      const tokenPair = authService.refresh(refresh, req.res.locals.user);
+      res.status(200).json({
+        ...tokenPair,
       });
     } catch (e) {
       next(e);

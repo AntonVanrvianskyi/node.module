@@ -7,6 +7,7 @@ import { User } from "../models/User.model";
 import { generateToken } from "./generete.token.service";
 import { passwordService } from "./password.service";
 
+
 class AuthService {
   public async register(data: IUser): Promise<void> {
     const hashedPassword = await passwordService.hash(data.password);
@@ -29,7 +30,21 @@ class AuthService {
     });
     return tokensPair;
   }
-  
+
+  public refresh(refreshToken: string, id: string) {
+    try {
+      const entity = Token.findOne({ refresh: refreshToken });
+      if (!entity) {
+        throw new ApiError("Refresh not valid", 401);
+      }
+      const newTokenPair = generateToken.create({ _id: id });
+      return {
+        ...newTokenPair,
+      };
+    } catch (e) {
+      throw new ApiError(e.message, e.status);
+    }
+  }
 }
 
 export const authService = new AuthService();
