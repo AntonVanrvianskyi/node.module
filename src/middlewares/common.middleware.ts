@@ -20,18 +20,7 @@ class CommonMiddleware {
       }
     };
   }
-  public isValidUpdate(req: Request, res: Response, next: NextFunction) {
-    try {
-      const { error, value } = UserValidator.update.validate(req.body);
-      if (error) {
-        throw new Error(error.message);
-      }
-      req.body = value;
-      next();
-    } catch (e) {
-      next(e);
-    }
-  }
+
   public isIdValid(req: Request, res: Response, next: NextFunction) {
     try {
       const { id } = req.params;
@@ -59,6 +48,8 @@ class CommonMiddleware {
       next(e);
     }
   }
+
+
 }
 
 export const commonMiddleware = new CommonMiddleware();

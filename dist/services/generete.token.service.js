@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateToken = void 0;
 const jwt = __importStar(require("jsonwebtoken"));
+const error_interface_1 = require("../interfaces/error.interface");
 class GenerateTokenService {
     create(payload) {
         const access = jwt.sign(payload, "jwtAccess", {
@@ -37,6 +38,14 @@ class GenerateTokenService {
             access,
             refresh,
         };
+    }
+    checkToken(token) {
+        try {
+            return jwt.verify(token, "jwtAccess");
+        }
+        catch (e) {
+            throw new error_interface_1.ApiError(e.message, e.status);
+        }
     }
 }
 exports.generateToken = new GenerateTokenService();

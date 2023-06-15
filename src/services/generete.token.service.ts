@@ -1,5 +1,6 @@
 import * as jwt from "jsonwebtoken";
 
+import { ApiError } from "../interfaces/error.interface";
 
 class GenerateTokenService {
   public create(payload: any) {
@@ -13,6 +14,14 @@ class GenerateTokenService {
       access,
       refresh,
     };
+  }
+
+  public checkToken(token: string) {
+    try {
+      return jwt.verify(token, "jwtAccess");
+    } catch (e) {
+      throw new ApiError(e.message, e.status);
+    }
   }
 }
 

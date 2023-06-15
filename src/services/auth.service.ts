@@ -29,6 +29,7 @@ class AuthService {
     });
     return tokensPair;
   }
+  
 }
 
 export const authService = new AuthService();
