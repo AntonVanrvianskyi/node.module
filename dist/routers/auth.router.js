@@ -11,4 +11,6 @@ const router = (0, express_1.Router)();
 router.post("/register", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.create), user_middleware_1.userMiddleware.emailCheck, auth_controller_1.authController.register);
 router.post("/login", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.login), common_middleware_1.commonMiddleware.userChecked, auth_controller_1.authController.login);
 router.post("/refresh", auth_middleware_1.authMiddleware.checkRefresh, auth_controller_1.authController.refresh);
+router.post("/changePassword", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.changePassword), auth_middleware_1.authMiddleware.checkAccessToken, auth_controller_1.authController.changePassword);
+router.post("/activate-account/:token", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.activate), auth_middleware_1.authMiddleware.checkActionToken, auth_controller_1.authController.activate);
 exports.authRouter = router;

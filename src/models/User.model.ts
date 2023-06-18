@@ -28,6 +28,10 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    isActivate: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     versionKey: false,

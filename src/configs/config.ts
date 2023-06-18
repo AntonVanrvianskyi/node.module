@@ -6,4 +6,5 @@ export const configs = {
   DB_URL: process.env.DB_URL,
   SECRET_ACCESS: process.env.SECRET_ACCESS,
   SECRET_REFRESH: process.env.SECRET_REFRESH,
+  SECRET_ACTION: process.env.SECRET_ACTION,
 };

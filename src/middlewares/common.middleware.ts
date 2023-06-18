@@ -4,6 +4,7 @@ import { ObjectSchema } from "joi";
 import { ApiError } from "../interfaces/error.interface";
 import { userService } from "../services/user.service";
 import { UserValidator } from "../validators/user.validator";
+import { User } from "../models/User.model";
 
 class CommonMiddleware {
   public isBodyValid(validator: ObjectSchema) {
@@ -39,6 +40,10 @@ class CommonMiddleware {
     try {
       const { email } = req.body;
       const user = await userService.findOne(email);
+      const activate = User.findOne({ email }).select("isActivate");
+      if (!activate) {
+        throw new ApiError("User not activate", 400);
+      }
       if (!user) {
         throw new ApiError("Invalid email or password", 400);
       }

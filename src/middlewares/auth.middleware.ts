@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 
 import { configs } from "../configs/config";
 import { ApiError } from "../interfaces/error.interface";
+import { ActionToken } from "../models/action.token.model";
 import { Token } from "../models/token.model";
 import { generateToken } from "../services/generete.token.service";
 
@@ -48,6 +49,32 @@ class AuthMiddleware {
 
       req.res.locals.oldTokenPair = entity;
       req.res.locals.tokenPayload = { _id: payload._id, name: payload.name };
+      next();
+    } catch (e) {
+      next(e);
+    }
+  }
+
+  public async checkActionToken(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) {
+    try {
+      const { token } = req.params;
+      const tokenFromBd = await ActionToken.findOne({ token });
+      if (!tokenFromBd) {
+        throw new ApiError("No Action Token", 400);
+      }
+      const tokenActionPayload = generateToken.checkToken(
+        token,
+        configs.SECRET_ACTION
+      );
+      // console.log(tokenActionPayload._id)
+      req.res.locals.actionTokenPayload = {
+        id: tokenActionPayload._id,
+      };
+      next();
     } catch (e) {
       next(e);
     }

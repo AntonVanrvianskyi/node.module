@@ -43,7 +43,7 @@ app.use((err, req, res, next) => {
         status: err.status,
     });
 });
-const PORT = 5000;
+const PORT = 5002;
 app.listen(PORT, () => {
     mongoose.connect(config_1.configs.DB_URL);
     console.log(`Server started to ${PORT}`);

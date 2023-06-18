@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.authMiddleware = void 0;
 const config_1 = require("../configs/config");
 const error_interface_1 = require("../interfaces/error.interface");
+const action_token_model_1 = require("../models/action.token.model");
 const token_model_1 = require("../models/token.model");
 const generete_token_service_1 = require("../services/generete.token.service");
 class AuthMiddleware {
@@ -37,6 +38,24 @@ class AuthMiddleware {
             }
             req.res.locals.oldTokenPair = entity;
             req.res.locals.tokenPayload = { _id: payload._id, name: payload.name };
+            next();
+        }
+        catch (e) {
+            next(e);
+        }
+    }
+    async checkActionToken(req, res, next) {
+        try {
+            const { token } = req.params;
+            const tokenFromBd = await action_token_model_1.ActionToken.findOne({ token });
+            if (!tokenFromBd) {
+                throw new error_interface_1.ApiError("No Action Token", 400);
+            }
+            const tokenActionPayload = generete_token_service_1.generateToken.checkToken(token, config_1.configs.SECRET_ACTION);
+            req.res.locals.actionTokenPayload = {
+                id: tokenActionPayload._id,
+            };
+            next();
         }
         catch (e) {
             next(e);

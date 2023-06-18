@@ -4,7 +4,7 @@ import { authController } from "../controlers/auth.controller";
 import { commonMiddleware } from "../middlewares/common.middleware";
 import { UserValidator } from "../validators/user.validator";
 import { userMiddleware } from "../middlewares/user.middleware";
-import {authMiddleware} from "../middlewares/auth.middleware";
+import { authMiddleware } from "../middlewares/auth.middleware";
 
 const router = Router();
 
@@ -21,5 +21,17 @@ router.post(
   authController.login
 );
 router.post("/refresh", authMiddleware.checkRefresh, authController.refresh);
+router.post(
+  "/changePassword",
+  commonMiddleware.isBodyValid(UserValidator.changePassword),
+  authMiddleware.checkAccessToken,
+  authController.changePassword
+);
+router.post(
+  "/activate-account/:token",
+  commonMiddleware.isBodyValid(UserValidator.activate),
+  authMiddleware.checkActionToken,
+  authController.activate
+);
 
 export const authRouter = router;

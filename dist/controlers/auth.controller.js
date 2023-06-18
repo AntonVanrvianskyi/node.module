@@ -36,5 +36,26 @@ class AuthController {
             next(e);
         }
     }
+    async changePassword(req, res, next) {
+        try {
+            const { _id: userId } = req.res.locals.tokenPayload;
+            await auth_service_1.authService.checkedPassword(req.body, userId);
+            return res.sendStatus(201);
+        }
+        catch (e) {
+            next(e);
+        }
+    }
+    async activate(req, res, next) {
+        try {
+            const { id } = req.res.locals.actionTokenPayload;
+            console.log(id);
+            await auth_service_1.authService.activate(req.body, id);
+            return res.sendStatus(200);
+        }
+        catch (e) {
+            next(e);
+        }
+    }
 }
 exports.authController = new AuthController();
