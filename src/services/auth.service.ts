@@ -78,8 +78,6 @@ class AuthService {
       if (!userEmail) {
         throw new ApiError("Invalid login", 400);
       }
-      // const activate = await User.findOne(email).select("isActivate");
-      // console.log(activate);
       await Promise.all([
         User.findByIdAndUpdate(userId, { isActivate: true }),
         ActionToken.deleteOne({ _userId: userId }),
