@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="activate email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/controlers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controlers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/middlewares/common.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/common.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/user.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/user.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/common.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/common.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/email-templates/views/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/email-templates/views/register.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +108,7 @@
       <workItem from="1686915148915" duration="5746000" />
       <workItem from="1687096581800" duration="5736000" />
       <workItem from="1687106530870" duration="11422000" />
-      <workItem from="1687156236862" duration="626000" />
+      <workItem from="1687156236862" duration="2630000" />
     </task>
     <task id="LOCAL-00001" summary="home work1">
       <created>1685443128723</created>
@@ -208,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687117843408</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="activate email">
+      <created>1687157099888</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687157099888</updated>
+    </task>
+    <task id="LOCAL-00015" summary="activate email">
+      <created>1687157131984</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687157131984</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
