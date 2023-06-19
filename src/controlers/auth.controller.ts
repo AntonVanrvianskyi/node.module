@@ -56,7 +56,7 @@ class AuthController {
     try {
       const { id } = req.res.locals.actionTokenPayload;
 
-      await authService.activate(req.body, id);
+      await authService.activate(id);
       return res.sendStatus(200);
     } catch (e) {
       next(e);

@@ -12,9 +12,7 @@ export class UserValidator {
   static checkedID = Joi.string().regex(regexConstants.ID).messages({
     "string.pattern.base": "Не коректне id",
   });
-  static activate = Joi.object({
-    email: this.email.required(),
-  });
+
   static create = Joi.object({
     name: this.firsName.required(),
     age: this.age.required(),

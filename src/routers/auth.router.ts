@@ -1,10 +1,10 @@
 import { Router } from "express";
 
 import { authController } from "../controlers/auth.controller";
-import { commonMiddleware } from "../middlewares/common.middleware";
-import { UserValidator } from "../validators/user.validator";
-import { userMiddleware } from "../middlewares/user.middleware";
 import { authMiddleware } from "../middlewares/auth.middleware";
+import { commonMiddleware } from "../middlewares/common.middleware";
+import { userMiddleware } from "../middlewares/user.middleware";
+import { UserValidator } from "../validators/user.validator";
 
 const router = Router();
 
@@ -29,7 +29,7 @@ router.post(
 );
 router.post(
   "/activate-account/:token",
-  commonMiddleware.isBodyValid(UserValidator.activate),
+
   authMiddleware.checkActionToken,
   authController.activate
 );

@@ -72,7 +72,7 @@ class AuthService {
     }
   }
 
-  public async activate(email: any, userId: string): Promise<void> {
+  public async activate(userId: string): Promise<void> {
     try {
       const userEmail = await User.findById(userId).select("email");
       if (!userEmail) {

@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="activate email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/email-templates/views/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/email-templates/views/register.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/auth.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/auth.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validators/user.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/user.validator.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +112,7 @@
       <workItem from="1686915148915" duration="5746000" />
       <workItem from="1687096581800" duration="5736000" />
       <workItem from="1687106530870" duration="11422000" />
-      <workItem from="1687156236862" duration="2630000" />
+      <workItem from="1687156236862" duration="3882000" />
     </task>
     <task id="LOCAL-00001" summary="home work1">
       <created>1685443128723</created>
@@ -215,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687157131984</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="activate email">
+      <created>1687159111215</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687159111215</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

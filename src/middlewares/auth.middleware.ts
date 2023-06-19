@@ -70,7 +70,7 @@ class AuthMiddleware {
         token,
         configs.SECRET_ACTION
       );
-      // console.log(tokenActionPayload._id)
+
       req.res.locals.actionTokenPayload = {
         id: tokenActionPayload._id,
       };
