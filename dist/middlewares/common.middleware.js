@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.commonMiddleware = void 0;
 const error_interface_1 = require("../interfaces/error.interface");
+const User_model_1 = require("../models/User.model");
 const user_service_1 = require("../services/user.service");
 const user_validator_1 = require("../validators/user.validator");
-const User_model_1 = require("../models/User.model");
 class CommonMiddleware {
     isBodyValid(validator) {
         return (req, res, next) => {
@@ -39,8 +39,8 @@ class CommonMiddleware {
         try {
             const { email } = req.body;
             const user = await user_service_1.userService.findOne(email);
-            const activate = User_model_1.User.findOne({ email }).select("isActivate");
-            if (!activate) {
+            const { isActivate } = (await User_model_1.User.findOne({ email }));
+            if (!isActivate) {
                 throw new error_interface_1.ApiError("User not activate", 400);
             }
             if (!user) {

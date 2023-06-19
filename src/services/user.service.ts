@@ -31,8 +31,7 @@ class UserService {
     return user;
   }
   public async findOne(email: string): Promise<IUser> {
-    const user = await User.findOne({ email });
-    return user;
+    return User.findOne({ email });
   }
 }
 

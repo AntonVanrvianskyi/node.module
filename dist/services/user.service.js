@@ -28,8 +28,7 @@ class UserService {
         return user;
     }
     async findOne(email) {
-        const user = await User_model_1.User.findOne({ email });
-        return user;
+        return User_model_1.User.findOne({ email });
     }
 }
 exports.userService = new UserService();

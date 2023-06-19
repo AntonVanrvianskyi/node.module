@@ -72,13 +72,14 @@ class AuthService {
     }
   }
 
-  public async activate(email: string, userId: string): Promise<void> {
+  public async activate(email: any, userId: string): Promise<void> {
     try {
       const userEmail = await User.findById(userId).select("email");
       if (!userEmail) {
         throw new ApiError("Invalid login", 400);
       }
-
+      // const activate = await User.findOne(email).select("isActivate");
+      // console.log(activate);
       await Promise.all([
         User.findByIdAndUpdate(userId, { isActivate: true }),
         ActionToken.deleteOne({ _userId: userId }),

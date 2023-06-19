@@ -2,9 +2,10 @@ import { NextFunction, Request, Response } from "express";
 import { ObjectSchema } from "joi";
 
 import { ApiError } from "../interfaces/error.interface";
+import { IUser } from "../interfaces/user.interface";
+import { User } from "../models/User.model";
 import { userService } from "../services/user.service";
 import { UserValidator } from "../validators/user.validator";
-import { User } from "../models/User.model";
 
 class CommonMiddleware {
   public isBodyValid(validator: ObjectSchema) {
@@ -40,10 +41,12 @@ class CommonMiddleware {
     try {
       const { email } = req.body;
       const user = await userService.findOne(email);
-      const activate = User.findOne({ email }).select("isActivate");
-      if (!activate) {
+      const { isActivate } = (await User.findOne({ email })) as IUser;
+
+      if (!isActivate) {
         throw new ApiError("User not activate", 400);
       }
+
       if (!user) {
         throw new ApiError("Invalid email or password", 400);
       }
@@ -53,8 +56,6 @@ class CommonMiddleware {
       next(e);
     }
   }
-
-
 }
 
 export const commonMiddleware = new CommonMiddleware();
