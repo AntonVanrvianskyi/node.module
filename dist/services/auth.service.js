@@ -60,7 +60,7 @@ class AuthService {
             throw new error_interface_1.ApiError(e.message, e.status);
         }
     }
-    async activate(email, userId) {
+    async activate(userId) {
         try {
             const userEmail = await User_model_1.User.findById(userId).select("email");
             if (!userEmail) {

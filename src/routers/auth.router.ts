@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import { authController } from "../controlers/auth.controller";
+import { EEmail } from "../enums/email.enum";
 import { authMiddleware } from "../middlewares/auth.middleware";
 import { commonMiddleware } from "../middlewares/common.middleware";
 import { userMiddleware } from "../middlewares/user.middleware";
@@ -11,7 +12,7 @@ const router = Router();
 router.post(
   "/register",
   commonMiddleware.isBodyValid(UserValidator.create),
-  userMiddleware.emailCheck,
+  userMiddleware.emailCheck(EEmail.Register),
   authController.register
 );
 router.post(
@@ -29,9 +30,13 @@ router.post(
 );
 router.post(
   "/activate-account/:token",
-
   authMiddleware.checkActionToken,
   authController.activate
 );
-
+router.post(
+  "forgot",
+  commonMiddleware.isBodyValid(UserValidator.forgot),
+  userMiddleware.emailCheck(EEmail.Forgot),
+  authController.forgot
+);
 export const authRouter = router;

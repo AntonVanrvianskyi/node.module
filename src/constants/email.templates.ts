@@ -5,4 +5,8 @@ export const emailTemplates = {
     templateName: "register",
     subject: "Hello is my first email",
   },
+  [EmailEnum.Forgot]: {
+    templateName: "forgot",
+    subject: "Forgot Password",
+  },
 };

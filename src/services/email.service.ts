@@ -12,8 +12,8 @@ class EmailService {
       from: "No-reply",
       service: "gmail",
       auth: {
-        user: "anton.varvianskyi@gmail.com",
-        pass: "uicuijlaysgbvwlr",
+        user: "varvanskijanton7@gmail.com",
+        pass: "gzdugpnmqbrrwekg",
       },
     });
     const hbsOptions = {

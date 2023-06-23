@@ -20,9 +20,6 @@ UserValidator.email = joi_1.default.string().regex(regex_constants_1.regexConsta
 UserValidator.checkedID = joi_1.default.string().regex(regex_constants_1.regexConstants.ID).messages({
     "string.pattern.base": "Не коректне id",
 });
-UserValidator.activate = joi_1.default.object({
-    email: _a.email.required(),
-});
 UserValidator.create = joi_1.default.object({
     name: _a.firsName.required(),
     age: _a.age.required(),
@@ -42,4 +39,7 @@ UserValidator.login = joi_1.default.object({
 UserValidator.changePassword = joi_1.default.object({
     oldPassword: _a.password.required(),
     newPassword: _a.password.required(),
+});
+UserValidator.forgot = joi_1.default.object({
+    email: _a.email.required()
 });

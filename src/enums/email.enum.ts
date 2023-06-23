@@ -1,3 +1,8 @@
 export enum EmailEnum {
-    WELCOME
+  WELCOME,
+  Forgot,
+}
+export enum EEmail {
+  Forgot,
+  Register
 }

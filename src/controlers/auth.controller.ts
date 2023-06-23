@@ -62,6 +62,14 @@ class AuthController {
       next(e);
     }
   }
+
+  public async forgot (req: Request, res: Response, next: NextFunction){
+    try {
+
+    }catch (e) {
+      next(e)
+    }
+  }
 }
 
 export const authController = new AuthController();

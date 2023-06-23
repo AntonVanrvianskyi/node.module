@@ -1,22 +1,37 @@
 import { NextFunction, Request, Response } from "express";
 
+import { EEmail } from "../enums/email.enum";
 import { ApiError } from "../interfaces/error.interface";
 import { User } from "../models/User.model";
 
 class UserMiddleware {
-  public async emailCheck(req: Request, res: Response, next: NextFunction) {
-    try {
-      const { email } = req.body;
-      const userEmail = await User.findOne({ email });
-      if (userEmail) {
-        throw new ApiError("Користувач вже існує", 401);
-      }
-      next();
-    } catch (e) {
-      next(e);
-    }
-  }
+  public emailCheck(type: EEmail) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      try {
+        const { email } = req.body;
+        const userEmail = await User.findOne({ email });
+        switch (type) {
+          case EEmail.Register: {
+            if (userEmail) {
+              throw new ApiError("Користувач вже існує", 401);
+            }
+            break;
+          }
+          case EEmail.Forgot: {
+            if (!userEmail) {
+              throw new ApiError("User not found", 400);
+            }
+            break;
+          }
+        }
+        req.body = userEmail;
 
+        next();
+      } catch (e) {
+        next(e);
+      }
+    };
+  }
 }
 
 export const userMiddleware = new UserMiddleware();
