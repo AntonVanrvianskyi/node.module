@@ -1,8 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 
+
 import { IToken } from "../interfaces/token.interface";
 import { ITokenPayload } from "../interfaces/user.interface";
 import { authService } from "../services/auth.service";
+
 
 class AuthController {
   public async register(req: Request, res: Response, next: NextFunction) {
@@ -63,10 +65,21 @@ class AuthController {
     }
   }
 
-  public async forgot (req: Request, res: Response, next: NextFunction){
+  public async forgot(req: Request, res: Response, next: NextFunction) {
     try {
-
-    }catch (e) {
+      await authService.forgot(req.body);
+      return res.sendStatus(200);
+    } catch (e) {
+      next(e);
+    }
+  }
+  public async setForgot(req: Request, res: Response, next: NextFunction){
+    try {
+      const { id } = req.res.locals.actionTokenPayload;
+      const { password } = req.body
+      await authService.setForgot(id, password)
+      return res.sendStatus(200)
+    } catch (e) {
       next(e)
     }
   }

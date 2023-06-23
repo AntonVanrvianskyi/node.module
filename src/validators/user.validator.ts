@@ -37,4 +37,7 @@ export class UserValidator {
   static forgot = Joi.object({
     email: this.email.required()
   })
+  static setForgot = Joi.object({
+    password: this.password.required()
+  })
 }

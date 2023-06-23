@@ -58,6 +58,19 @@ class AuthController {
     }
     async forgot(req, res, next) {
         try {
+            await auth_service_1.authService.forgot(req.body);
+            return res.sendStatus(200);
+        }
+        catch (e) {
+            next(e);
+        }
+    }
+    async setForgot(req, res, next) {
+        try {
+            const { id } = req.res.locals.actionTokenPayload;
+            const { password } = req.body;
+            await auth_service_1.authService.setForgot(id, password);
+            return res.sendStatus(200);
         }
         catch (e) {
             next(e);

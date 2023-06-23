@@ -4,6 +4,7 @@ import * as path from "path";
 
 import { emailTemplates } from "../constants/email.templates";
 import { EmailEnum } from "../enums/email.enum";
+import { ApiError } from "../interfaces/error.interface";
 
 class EmailService {
   private transporter;
@@ -13,7 +14,7 @@ class EmailService {
       service: "gmail",
       auth: {
         user: "varvanskijanton7@gmail.com",
-        pass: "gzdugpnmqbrrwekg",
+        pass: "cphaybnsvcjymtrj",
       },
     });
     const hbsOptions = {
@@ -43,14 +44,18 @@ class EmailService {
     emailAction: EmailEnum,
     context: Record<string, string | number> = {}
   ) {
-    const { templateName, subject } = emailTemplates[emailAction];
-    const mailOptions = {
-      to: email,
-      subject,
-      template: templateName,
-      context,
-    };
-    return this.transporter.sendMail(mailOptions);
+    try {
+      const { templateName, subject } = emailTemplates[emailAction];
+      const mailOptions = {
+        to: email,
+        subject,
+        template: templateName,
+        context,
+      };
+      return this.transporter.sendMail(mailOptions);
+    } catch (e) {
+      throw new ApiError(e.message, e.status);
+    }
   }
 }
 

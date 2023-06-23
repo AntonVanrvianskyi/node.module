@@ -3,8 +3,7 @@ import * as jwt from "jsonwebtoken";
 import { configs } from "../configs/config";
 import { ApiError } from "../interfaces/error.interface";
 import { ITokenPayload } from "../interfaces/user.interface";
-import { ActionToken } from "../models/action.token.model";
-import { User } from "../models/User.model";
+import {Types} from "mongoose";
 
 class GenerateTokenService {
   public create(payload: ITokenPayload) {
@@ -29,14 +28,11 @@ class GenerateTokenService {
     }
   }
 
-  public async createActionToken(email: string): Promise<string> {
-    const id = await User.findOne({ email }).select("_id");
-
-    const token = jwt.sign({ _id: id }, configs.SECRET_ACTION, {
+  public createActionToken(payload: Record<string, Types.ObjectId>) {
+    return jwt.sign(payload, configs.SECRET_ACTION, {
       expiresIn: "20m",
     });
-    await ActionToken.create({ token, _userId: id });
-    return token;
+
   }
 }
 

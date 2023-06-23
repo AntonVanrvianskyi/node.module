@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.authService = void 0;
+const action_token_type_enum_1 = require("../enums/action.token.type.enum");
 const email_enum_1 = require("../enums/email.enum");
 const error_interface_1 = require("../interfaces/error.interface");
 const action_token_model_1 = require("../models/action.token.model");
@@ -13,11 +14,18 @@ class AuthService {
     async register(data) {
         const hashedPassword = await password_service_1.passwordService.hash(data.password);
         await User_model_1.User.create({ ...data, password: hashedPassword });
-        const actionToken = await generete_token_service_1.generateToken.createActionToken(data.email);
-        await email_service_1.emailService.send(data.email, email_enum_1.EmailEnum.WELCOME, {
-            name: data.name,
-            token: actionToken,
-        });
+        const actionToken = generete_token_service_1.generateToken.createActionToken({ id: data._id });
+        await Promise.all([
+            action_token_model_1.ActionToken.create({
+                token: actionToken,
+                tokenType: action_token_type_enum_1.ActionTokenTypeEnum.Activate,
+                _userId: data._id,
+            }),
+            email_service_1.emailService.send(data.email, email_enum_1.EmailEnum.WELCOME, {
+                name: data.name,
+                token: actionToken,
+            }),
+        ]);
     }
     async login(data, user) {
         const isMatched = await password_service_1.passwordService.compare(data.password, user.password);
@@ -68,6 +76,36 @@ class AuthService {
             }
             await Promise.all([
                 User_model_1.User.findByIdAndUpdate(userId, { isActivate: true }),
+                action_token_model_1.ActionToken.deleteOne({ _userId: userId }),
+            ]);
+        }
+        catch (e) {
+            throw new error_interface_1.ApiError(e.message, e.status);
+        }
+    }
+    async forgot(user) {
+        try {
+            const actionToken = generete_token_service_1.generateToken.createActionToken({ id: user._id });
+            await Promise.all([
+                action_token_model_1.ActionToken.create({
+                    token: actionToken,
+                    tokenType: action_token_type_enum_1.ActionTokenTypeEnum.Forgot,
+                    _userId: user._id,
+                }),
+                email_service_1.emailService.send(user.email, email_enum_1.EmailEnum.Forgot, {
+                    actionToken,
+                }),
+            ]);
+        }
+        catch (e) {
+            throw new error_interface_1.ApiError(e.message, e.status);
+        }
+    }
+    async setForgot(userId, password) {
+        try {
+            const hashedPassword = await password_service_1.passwordService.hash(password);
+            await Promise.all([
+                User_model_1.User.updateOne({ _id: userId }, { password: hashedPassword }),
                 action_token_model_1.ActionToken.deleteOne({ _userId: userId }),
             ]);
         }

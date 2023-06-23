@@ -14,5 +14,6 @@ router.post("/login", common_middleware_1.commonMiddleware.isBodyValid(user_vali
 router.post("/refresh", auth_middleware_1.authMiddleware.checkRefresh, auth_controller_1.authController.refresh);
 router.post("/changePassword", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.changePassword), auth_middleware_1.authMiddleware.checkAccessToken, auth_controller_1.authController.changePassword);
 router.post("/activate-account/:token", auth_middleware_1.authMiddleware.checkActionToken, auth_controller_1.authController.activate);
-router.post("forgot", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.forgot), user_middleware_1.userMiddleware.emailCheck(email_enum_1.EEmail.Forgot), auth_controller_1.authController.forgot);
+router.post("/forgot", common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.forgot), user_middleware_1.userMiddleware.emailCheck(email_enum_1.EEmail.Forgot), auth_controller_1.authController.forgot);
+router.post("/forgot/:token", auth_middleware_1.authMiddleware.checkActionToken, common_middleware_1.commonMiddleware.isBodyValid(user_validator_1.UserValidator.setForgot), auth_controller_1.authController.setForgot);
 exports.authRouter = router;

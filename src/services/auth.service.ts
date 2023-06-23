@@ -1,3 +1,6 @@
+import { Types } from "mongoose";
+
+import { ActionTokenTypeEnum } from "../enums/action.token.type.enum";
 import { EmailEnum } from "../enums/email.enum";
 import { ApiError } from "../interfaces/error.interface";
 import { ILogin } from "../interfaces/login.interface";
@@ -15,12 +18,18 @@ class AuthService {
   public async register(data: IUser): Promise<void> {
     const hashedPassword = await passwordService.hash(data.password);
     await User.create({ ...data, password: hashedPassword });
-    const actionToken = await generateToken.createActionToken(data.email);
-
-    await emailService.send(data.email, EmailEnum.WELCOME, {
-      name: data.name,
-      token: actionToken,
-    });
+    const actionToken = generateToken.createActionToken({ id: data._id });
+    await Promise.all([
+      ActionToken.create({
+        token: actionToken,
+        tokenType: ActionTokenTypeEnum.Activate,
+        _userId: data._id,
+      }),
+      emailService.send(data.email, EmailEnum.WELCOME, {
+        name: data.name,
+        token: actionToken,
+      }),
+    ]);
   }
   public async login(data: ILogin, user: IUser): Promise<IToken> {
     const isMatched = await passwordService.compare(
@@ -80,6 +89,34 @@ class AuthService {
       }
       await Promise.all([
         User.findByIdAndUpdate(userId, { isActivate: true }),
+        ActionToken.deleteOne({ _userId: userId }),
+      ]);
+    } catch (e) {
+      throw new ApiError(e.message, e.status);
+    }
+  }
+  public async forgot(user: IUser) {
+    try {
+      const actionToken = generateToken.createActionToken({ id: user._id });
+      await Promise.all([
+        ActionToken.create({
+          token: actionToken,
+          tokenType: ActionTokenTypeEnum.Forgot,
+          _userId: user._id,
+        }),
+        emailService.send(user.email, EmailEnum.Forgot, {
+          actionToken,
+        }),
+      ]);
+    } catch (e) {
+      throw new ApiError(e.message, e.status);
+    }
+  }
+  public async setForgot(userId: Types.ObjectId, password: string) {
+    try {
+      const hashedPassword = await passwordService.hash(password);
+      await Promise.all([
+        User.updateOne({ _id: userId }, { password: hashedPassword }),
         ActionToken.deleteOne({ _userId: userId }),
       ]);
     } catch (e) {

@@ -23,8 +23,9 @@ class UserMiddleware {
                         }
                         break;
                     }
+                    default:
+                        req.body = userEmail;
                 }
-                req.body = userEmail;
                 next();
             }
             catch (e) {

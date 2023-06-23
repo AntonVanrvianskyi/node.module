@@ -27,8 +27,6 @@ exports.generateToken = void 0;
 const jwt = __importStar(require("jsonwebtoken"));
 const config_1 = require("../configs/config");
 const error_interface_1 = require("../interfaces/error.interface");
-const action_token_model_1 = require("../models/action.token.model");
-const User_model_1 = require("../models/User.model");
 class GenerateTokenService {
     create(payload) {
         const access = jwt.sign(payload, config_1.configs.SECRET_ACCESS, {
@@ -50,13 +48,10 @@ class GenerateTokenService {
             throw new error_interface_1.ApiError(e.message, e.status);
         }
     }
-    async createActionToken(email) {
-        const id = await User_model_1.User.findOne({ email }).select("_id");
-        const token = jwt.sign({ _id: id }, config_1.configs.SECRET_ACTION, {
+    createActionToken(payload) {
+        return jwt.sign(payload, config_1.configs.SECRET_ACTION, {
             expiresIn: "20m",
         });
-        await action_token_model_1.ActionToken.create({ token, _userId: id });
-        return token;
     }
 }
 exports.generateToken = new GenerateTokenService();

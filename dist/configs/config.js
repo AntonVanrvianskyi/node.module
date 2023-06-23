@@ -6,7 +6,7 @@ const dotenv_1 = require("dotenv");
 exports.configs = {
     PORT: process.env.PORT,
     DB_URL: process.env.DB_URL,
-    SECRET_ACCESS: process.env.SECRET_ACCESS,
-    SECRET_REFRESH: process.env.SECRET_REFRESH,
-    SECRET_ACTION: process.env.SECRET_ACTION,
+    SECRET_ACCESS: process.env.JWT_ACCESS_SECRET,
+    SECRET_REFRESH: process.env.JWT_REFRESH_SECRET,
+    SECRET_ACTION: process.env.JWT_ACTION_SECRET,
 };

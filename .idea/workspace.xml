@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="change api">
-      <change afterPath="$PROJECT_DIR$/src/email-templates/views/forgot.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/enums/action.token.type.enum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/action.token.type.enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/configs/config.js" afterDir="false" />
@@ -29,15 +30,16 @@
       <change beforePath="$PROJECT_DIR$/dist/services/password.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/password.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/user.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/validators/user.validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/validators/user.validator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/email.templates.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/email.templates.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/email.enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/email.enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/email-templates/views/forgot.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/email-templates/views/forgot.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/common.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/common.middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/action.token.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/action.token.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/auth.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/auth.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/email.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/email.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/generete.token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/generete.token.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/validators/user.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/user.validator.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +106,23 @@
       <recent name="C:\Users\Boss\IdeaProjects\node.module\src\models" />
       <recent name="C:\Users\Boss\IdeaProjects\node.module\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -34,9 +34,15 @@ router.post(
   authController.activate
 );
 router.post(
-  "forgot",
+  "/forgot",
   commonMiddleware.isBodyValid(UserValidator.forgot),
   userMiddleware.emailCheck(EEmail.Forgot),
   authController.forgot
+);
+router.post(
+  "/forgot/:token",
+  authMiddleware.checkActionToken,
+  commonMiddleware.isBodyValid(UserValidator.setForgot),
+  authController.setForgot
 );
 export const authRouter = router;

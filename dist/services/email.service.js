@@ -31,6 +31,7 @@ const nodemailer_1 = __importDefault(require("nodemailer"));
 const nodemailer_express_handlebars_1 = __importDefault(require("nodemailer-express-handlebars"));
 const path = __importStar(require("path"));
 const email_templates_1 = require("../constants/email.templates");
+const error_interface_1 = require("../interfaces/error.interface");
 class EmailService {
     constructor() {
         this.transporter = nodemailer_1.default.createTransport({
@@ -38,7 +39,7 @@ class EmailService {
             service: "gmail",
             auth: {
                 user: "varvanskijanton7@gmail.com",
-                pass: "gzdugpnmqbrrwekg",
+                pass: "cphaybnsvcjymtrj",
             },
         });
         const hbsOptions = {
@@ -54,14 +55,19 @@ class EmailService {
         this.transporter.use("compile", (0, nodemailer_express_handlebars_1.default)(hbsOptions));
     }
     async send(email, emailAction, context = {}) {
-        const { templateName, subject } = email_templates_1.emailTemplates[emailAction];
-        const mailOptions = {
-            to: email,
-            subject,
-            template: templateName,
-            context,
-        };
-        return this.transporter.sendMail(mailOptions);
+        try {
+            const { templateName, subject } = email_templates_1.emailTemplates[emailAction];
+            const mailOptions = {
+                to: email,
+                subject,
+                template: templateName,
+                context,
+            };
+            return this.transporter.sendMail(mailOptions);
+        }
+        catch (e) {
+            throw new error_interface_1.ApiError(e.message, e.status);
+        }
     }
 }
 exports.emailService = new EmailService();
