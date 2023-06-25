@@ -4,44 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="change api">
-      <change afterPath="$PROJECT_DIR$/dist/enums/action.token.type.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/action.token.type.enum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/configs/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/constants/email.templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/constants/email.templates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/controlers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controlers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/controlers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/controlers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/enums/email.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/enums/email.enum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/interfaces/login.interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/interfaces/login.interface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/interfaces/password.interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/interfaces/password.interface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/middlewares/common.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/common.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/middlewares/user.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/models/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/User.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/models/action.token.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/action.token.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/models/token.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/models/token.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/routers/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routers/auth.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/routers/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/routers/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/auth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/email.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/email.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/generete.token.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/generete.token.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/password.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/password.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/validators/user.validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/validators/user.validator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configs/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlers/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlers/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/email-templates/views/forgot.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/email-templates/views/forgot.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/auth.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/user.middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/action.token.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/action.token.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/auth.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/auth.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/email.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/email.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/generete.token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/generete.token.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validators/user.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/user.validator.ts" afterDir="false" />
-    </list>
+    <list default="true" id="9b0ac762-73ec-441c-be49-8a3131ecb6a6" name="Changes" comment="forgot-password" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687159111215</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="forgot-password">
+      <created>1687527772489</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687527772489</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +277,8 @@
     <MESSAGE value="hw 6" />
     <MESSAGE value="refresh hw" />
     <MESSAGE value="activate email" />
-    <option name="LAST_COMMIT_MESSAGE" value="activate email" />
+    <MESSAGE value="forgot-password" />
+    <option name="LAST_COMMIT_MESSAGE" value="forgot-password" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
