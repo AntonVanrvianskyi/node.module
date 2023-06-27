@@ -29,6 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose = __importStar(require("mongoose"));
 const config_1 = require("./configs/config");
+const crones_1 = require("./crones");
 const auth_router_1 = require("./routers/auth.router");
 const user_router_1 = require("./routers/user.router");
 const app = (0, express_1.default)();
@@ -46,5 +47,6 @@ app.use((err, req, res, next) => {
 const PORT = 5002;
 app.listen(PORT, () => {
     mongoose.connect(config_1.configs.DB_URL);
+    (0, crones_1.croneRunner)();
     console.log(`Server started to ${PORT}`);
 });

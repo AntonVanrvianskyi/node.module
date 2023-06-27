@@ -2,10 +2,10 @@ import express, { NextFunction, Request, Response } from "express";
 import * as mongoose from "mongoose";
 
 import { configs } from "./configs/config";
+import { croneRunner } from "./crones";
 import { ApiError } from "./interfaces/error.interface";
 import { authRouter } from "./routers/auth.router";
 import { userRouter } from "./routers/user.router";
-
 
 const app = express();
 app.use(express.json());
@@ -26,5 +26,6 @@ const PORT = 5002;
 
 app.listen(PORT, () => {
   mongoose.connect(configs.DB_URL);
+  croneRunner();
   console.log(`Server started to ${PORT}`);
 });

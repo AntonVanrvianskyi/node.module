@@ -41,8 +41,8 @@ UserValidator.changePassword = joi_1.default.object({
     newPassword: _a.password.required(),
 });
 UserValidator.forgot = joi_1.default.object({
-    email: _a.email.required()
+    email: _a.email.required(),
 });
 UserValidator.setForgot = joi_1.default.object({
-    password: _a.password.required()
+    password: _a.password.required(),
 });
